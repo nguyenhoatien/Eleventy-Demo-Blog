@@ -13,6 +13,7 @@
     "packages/*"
   ],
   "dependencies": {
+    "@package/esbuild": "^1.0.0",
     "autoprefixer": "^10.4.19",
     "postcss-import": "^16.1.0"
   }
