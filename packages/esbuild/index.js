@@ -11,9 +11,9 @@ module.exports = function (eleventyConfig) {
                 let output = await esbuild.build({
                     target: 'es2020',
                     entryPoints: [path],
-                    minify: true,
                     bundle: true,
                     write: false,
+                    ...(process.env.NODE_ENV === 'production' ? { minify: true } : { sourcemap: true })
                 });
 
                 return output.outputFiles[0].text;

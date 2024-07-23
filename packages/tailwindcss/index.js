@@ -1,4 +1,3 @@
-
 const postcss = require('postcss');
 const postcssrc = require('postcss-load-config')
 
@@ -9,7 +8,7 @@ module.exports = function (eleventyConfig) {
         outputFileExtension: 'css',
         compile: async (content, path) => {
             return async () => {
-                let output = await postcssrc().then(({ plugins, options }) => {
+                let output = await postcssrc({}, __dirname).then(({ plugins, options }) => {
                     return postcss(plugins)
                         .process(content, { ...options, from: path })
                 })

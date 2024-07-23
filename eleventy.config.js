@@ -1,9 +1,9 @@
 
-const pluginPostCSS = require('@package/postcss');
+const pluginTailwindCSS = require('@package/tailwindcss');
 const pluginESBuild = require('@package/esbuild');
 
 module.exports = function (eleventyConfig) {
-    eleventyConfig.addPlugin(pluginPostCSS);
+    eleventyConfig.addPlugin(pluginTailwindCSS);
     eleventyConfig.addPlugin(pluginESBuild);
 
     eleventyConfig.addPassthroughCopy({

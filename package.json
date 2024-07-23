@@ -3,18 +3,14 @@
   "version": "0.0.0",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "@package/postcss": "^1.0.0",
-    "tailwindcss": "^3.4.6"
+    "@package/esbuild": "^1.0.0",
+    "@package/tailwindcss": "^1.0.0"
   },
   "scripts": {
+    "build": "NODE_ENV=production npx @11ty/eleventy",
     "start": "npx @11ty/eleventy --serve --quiet"
   },
   "workspaces": [
     "packages/*"
-  ],
-  "dependencies": {
-    "@package/esbuild": "^1.0.0",
-    "autoprefixer": "^10.4.19",
-    "postcss-import": "^16.1.0"
-  }
+  ]
 }
