@@ -1,0 +1,11 @@
+{
+  "name": "@package/postcss",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "postcss": "^8.4.39",
+    "postcss-load-config": "^6.0.1"
+  },
+  "scripts": {}
+}
