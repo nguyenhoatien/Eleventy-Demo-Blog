@@ -1,4 +1,4 @@
-# Eleventy Demo Blog
+# 11ty Demo Blog
 
 ## Features
 
