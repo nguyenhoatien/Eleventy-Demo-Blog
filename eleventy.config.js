@@ -6,6 +6,10 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(pluginPostCSS);
     eleventyConfig.addPlugin(pluginESBuild);
 
+    eleventyConfig.addPassthroughCopy({
+        "./public/": "/",
+    });
+
     return {
         dir: {
             input: "content",
