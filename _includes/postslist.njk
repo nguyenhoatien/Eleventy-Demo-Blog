@@ -1,0 +1,43 @@
+{%- css %}
+.postlist {
+    counter-reset: start-from {{(postslistCounter or postslist.length)+1}}
+}
+
+.postlist-item {
+    counter-increment: start-from -1;
+}
+
+.postlist-item:before {
+    display: inline-block;
+    pointer-events: none;
+    content: "" counter(start-from, decimal-leading-zero) ". ";
+    line-height: 100%;
+    text-align: right;
+    margin-left: -1.5rem;
+}
+
+.postlist-link {
+    flex-basis: calc(100% - 1.5rem);
+    text-underline-position: from-font;
+    text-underline-offset: 0;
+    text-decoration-thickness: 1px;
+}
+
+.postlist-date,
+.postlist-item:before {
+    font-size: 0.8125em;
+    color: var(--color-gray-90);
+}
+
+.postlist-date {
+    word-spacing: -0.5px;
+}
+{% endcss %}
+<ol reversed class="postlist list-none p-0 pl-6">
+{% for post in postslist | reverse %}
+	<li class="postlist-item flex flex-wrap items-baseline mb-4">
+		<a href="{{ post.url }}" class="postlist-link text-lg font-bold pl-1 pr-2 {% if post.url == url %} font-bold{% endif %}">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
+		<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("LLLL yyyy") }}</time>
+	</li>
+{% endfor %}
+</ol>

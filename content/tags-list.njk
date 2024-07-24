@@ -1,0 +1,12 @@
+---
+permalink: /tags/
+layout: layouts/home.njk
+---
+<h1>Tags</h1>
+
+<ul>
+{% for tag in collections.all | getAllTags | filterTagList %}
+	{% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+	<li><a href="{{ tagUrl }}" class="inline-flex items-center content-center capitalize italic">{{ tag }}</a></li>
+{% endfor %}
+</ul>

@@ -1,0 +1,18 @@
+/* Message Box */
+.message-box {
+	--color-message-box: #ffc;
+
+	@apply block px-4 py-3;
+	background-color: var(--color-message-box);
+	color: var(--color-gray-90);
+}
+
+.message-box ol {
+	@apply mt-0;
+}
+
+@media (prefers-color-scheme: dark) {
+	.message-box {
+		--color-message-box: #082840;
+	}
+}
