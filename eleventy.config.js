@@ -27,9 +27,9 @@ module.exports = function (eleventyConfig) {
         return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(format || "dd LLLL yyyy");
     });
 
-    eleventyConfig.addFilter('htmlDateString', (dateObj) => {
+    eleventyConfig.addFilter("htmlDateString", (dateObj) => {
         // dateObj input: https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
-        return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('yyyy-LL-dd');
+        return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
     });
 
     // Get the first `n` elements of a collection.
@@ -69,7 +69,7 @@ module.exports = function (eleventyConfig) {
                 placement: "after",
                 class: "header-anchor",
                 symbol: "#",
-                ariaHidden: false,
+                ariaHidden: false
             }),
             level: [1, 2, 3, 4],
             slugify: eleventyConfig.getFilter("slugify")
@@ -78,7 +78,7 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addShortcode("currentBuildDate", () => {
         return (new Date()).toISOString();
-    })
+    });
 
     // Features to make your build faster (when you need them)
 
@@ -95,7 +95,7 @@ module.exports = function (eleventyConfig) {
             "md",
             "njk",
             "html",
-            "liquid",
+            "liquid"
         ],
 
         // Pre-process *.md files with: (default: `liquid`)
@@ -122,6 +122,6 @@ module.exports = function (eleventyConfig) {
         // When paired with the HTML <base> plugin https://www.11ty.dev/docs/plugins/html-base/
         // it will transform any absolute URLs in your HTML to include this
         // folder name and does **not** affect where things go in the output folder.
-        pathPrefix: "/",
+        pathPrefix: "/"
     };
 };
